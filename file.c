@@ -390,13 +390,13 @@ int main() {
 	//check for stdout
 	//myfunctions
 	
-	printf("writing using stdout\n\n");
-	printf("using myfwrite\n\n");
+	printf("writing using stdout : \n");
+	printf("using myfwrite : ");
 	myfwrite(a, 10, 1, mystdout);
 	
 	//built-in  stdout and fwrite
 	
-	printf("\n\nusing fwrite\n\n");
+	printf("using fwrite : ");
 	fwrite(a, 10, 1, stdout);
 	
 	//check for stdin
@@ -589,13 +589,11 @@ int main() {
 
 		//READ + WRITE MODE CHECK
 		
-	printf("Checking the R+ mode by my_functions\n\n");
+	printf("Checking the R+ mode by my_functions");
 	bzero(d, 20);
-	
 	//open a new file and write in it
 	
 	fp5 = myfopen("filer+.txt", "r+");
-	
 	myfwrite(b, 1, 10, fp5);
 	
 	//seek the beginning and read the file in a string and print it 
@@ -603,7 +601,7 @@ int main() {
 	myfseek(fp5, 0, 0);
 	bzero(d, 20);
 	i = myfread(d, 1, 10, fp5);
-	printf("\n\ndata read by myfread:");
+	printf("\n read by myfread:");
 	j = 0;
 	while(i) {
 		printf("%c", d[j]);
